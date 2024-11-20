@@ -19,6 +19,40 @@
   font-family: Inter, sans-serif;
   font-weight: var(--font-weight-regular);
   background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-size: cover;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  margin: 100px 0;
+}
+
+.element-width {
+  width: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
+}
+
+.header {
+  margin: 0 auto;
+  padding: 136px clamp(0.875rem, -2.9711rem + 16.4099vw, 7.53125rem) 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 1);
+  font-family: PressStart2P, sans-serif;
+  font-weight: var(--font-weight-regular);
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: 1;
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: 1;
+}
+
+.theme-menu__button {
+  background-color: transparent;
+  border: none;
 }
