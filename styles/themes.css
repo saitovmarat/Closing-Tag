@@ -4,15 +4,16 @@
 
   --bg-color: rgba(255, 255, 255, 1);
   --accent-color: rgba(0, 0, 0, 1);
+  --like-button_color: rgba(255, 255, 255, 1);
 
   --bg-image: 
     repeating-linear-gradient(
-      to right, #d3d3d3 0, transparent 2px 
+      90deg, #d3d3d3 0 2px, transparent 2px 4px
     ),
     repeating-linear-gradient(
-      to bottom, #d3d3d3 0, transparent 2px 
+      180deg, #d3d3d3 0 2px, transparent 2px 4px
     ),
-    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
 }
 
 :root.theme-dark {
@@ -21,13 +22,14 @@
 
   --bg-color: rgba(0, 0, 0, 1);
   --accent-color: rgba(0, 204, 20, 1);
+  --like-button_color: rgba(0, 204, 20, 1);
 
   --bg-image: 
     repeating-linear-gradient(
-      to right, #000 0, transparent 2px 
+      to right, #000 0 2px, transparent 2px 4px 
     ),
     repeating-linear-gradient(
-      to bottom, #000 0, transparent 2px 
+      to bottom, #000 0 2px, transparent 2px 4px 
     ),
     linear-gradient(#007f0c, #004306);
 }
