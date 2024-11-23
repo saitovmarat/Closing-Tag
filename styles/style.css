@@ -1,18 +1,3 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-
-*/
-
 .page {
   display: flex;
   flex-direction: column;
@@ -97,7 +82,6 @@
 
 .theme-menu__button:hover {
   opacity: 60%;
-  cursor: pointer;
 }
 
 .theme-menu__button:focus {
@@ -124,7 +108,7 @@
   animation: move 1s ease-in-out infinite;
   block-size: 14px;
   inline-size: 14px;
-  inset-inline-start: -17px;
+  inset-inline-start: -21px;
 }
 
 .cards {
@@ -252,78 +236,6 @@
   height: 36px;
 }
 
-.like-icon:hover {
-  .core {
-    fill: var(--accent-color);
-    transition: fill 0.3s linear;
-  }
-  .main-body {
-    fill: var(--accent-color);
-    transition: fill 0.3s linear 0.05s;
-  }
-}
-
-.like-icon:active {
-  .core {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear;
-  }
-  .main-body {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear 0.05s;
-  }
-}
-
-.like-icon.is-liked {  
-  .heart {
-    transform-origin: center;
-    animation: zoomOut 0.3s ease-in-out 0.1s forwards; 
-  }
-
-  .core {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear;
-  }
-
-  .main-body {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear 0.05s;
-  }
-
-  .contour {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear 0.06s;
-  }
-  
-  .like-icon {
-    transition: transform 0.5s linear 0.15s;
-    transform: scale(1.2);
-  }
-  .sparks {
-    animation: sparksVisibility 0.3s ease-in 0.3s forwards;
-  }
-}
-
-.contour {
-  fill: var(--accent-color);
-}
-
-.main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.core {
-  fill: transparent;
-  transition: fill 0.3s linear 0.03s;
-}
-
-.sparks {
-  opacity: 0;
-  fill: var(--heart-color);
-  transition: opacity 0.3s linear 0.2s;
-}
-
 .button__text {
   position: relative;
   inset: 0;
@@ -341,60 +253,66 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 8px;
   height: 100%;
   margin: 0 auto;
   margin-block-start: clamp(3.25rem, 3.294rem + -0.1878vw, 3.125rem);
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color);
-  gap: 8px;
 }
 
 .dialog-button__icon {
-  margin: 15px 0 15px 19px;
   width: 21px;
   height: 21px;
+  margin: 15px 0 15px 19px;
+  color: var(--accent-color);
 }
 
 .dialog-button__text {
-  font-family: PressStart2P, sans-serif;
-  font-size: 14px;
-  font-weight: var(--font-weight-regular);
-  line-height: 0.9;
   padding-right: 21px;
+  font-family: PressStart2P, sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 0.9;
 }
 
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(4px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.dialog[open] {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content min-content;
+  margin: auto;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  background-color: var(--bg-color);
+  row-gap: 30px;
+  column-gap: 20px;
 }
 
-@keyframes zoomOut {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
+.dialog__icon {
+  width: 39px;
+  height: 39px;
+  align-self: center;
 }
 
-@keyframes sparksVisibility {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.dialog__text {
+  font-family: PressStart2P;
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.dialog__close-button {
+  grid-column: span 2;
+  font-family: PressStart2P;
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 0.9;
+  border: 2px solid var(--accent-color);
+  padding: 12.5px 0;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0,0,0, .75);
 }

@@ -1,14 +1,107 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+.like-icon:hover {
+  .core {
+    fill: var(--accent-color);
+    transition: fill 0.3s linear;
+  }
+  .main-body {
+    fill: var(--accent-color);
+    transition: fill 0.3s linear 0.05s;
+  }
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+.like-icon:active {
+  .core {
+    fill: var(--heart-color);
+    transition: fill 0.3s linear;
+  }
+  .main-body {
+    fill: var(--heart-color);
+    transition: fill 0.3s linear 0.05s;
+  }
+}
 
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-*/
+.like-icon.is-liked {  
+  .heart {
+    transform-origin: center;
+    animation: zoomOut 0.3s ease-in-out 0.1s forwards; 
+  }
+
+  .core {
+    fill: var(--heart-color);
+    transition: fill 0.3s linear;
+  }
+
+  .main-body {
+    fill: var(--heart-color);
+    transition: fill 0.3s linear 0.05s;
+  }
+
+  .contour {
+    fill: var(--heart-color);
+    transition: fill 0.3s linear 0.06s;
+  }
+  
+  .like-icon {
+    transition: transform 0.5s linear 0.15s;
+    transform: scale(1.2);
+  }
+  .sparks {
+    animation: sparksVisibility 0.3s ease-in 0.3s forwards;
+  }
+}
+
+.contour {
+  fill: var(--accent-color);
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s linear 0.03s;
+}
+
+.sparks {
+  opacity: 0;
+  fill: var(--heart-color);
+  transition: opacity 0.3s linear 0.2s;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparksVisibility {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
