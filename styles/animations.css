@@ -1,12 +1,12 @@
 .like-icon:hover {
-  .core {
-    fill: var(--accent-color);
-    transition: fill 0.3s linear;
-  }
-  .main-body {
-    fill: var(--accent-color);
-    transition: fill 0.3s linear 0.05s;
-  }
+    .core {
+      fill: var(--accent-color);
+      transition: fill 0.3s linear;
+    }
+    .main-body {
+      fill: var(--accent-color);
+      transition: fill 0.3s linear 0.05s;
+    }
 }
 
 .like-icon:active {
