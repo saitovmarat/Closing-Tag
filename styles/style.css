@@ -74,8 +74,8 @@
 .theme-menu__button::after {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 2px;
+  inline-size: 100%;
+  block-size: 2px;
   background-color: var(--accent-color);
   transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
@@ -125,6 +125,7 @@
   border: 1px solid var(--accent-color);
   background-color: var(--bg-color);
 }
+
 .card__title {
   padding: 4px 10px 3px 10px;
   font-family: Inter, sans-serif;
@@ -203,8 +204,8 @@
 }
 
 .card__icon-button {
-  padding-top: 9px;
-  padding-bottom: 5px;
+  padding-block-start: 9px;
+  padding-block-end: 5px;
 }
 
 .card__like-button {
@@ -242,15 +243,14 @@
 }
 
 .like-icon {
-  width: 39px;
-  height: 36px;
+  inline-size: 39px;
+  block-size: 36px;
 }
 
 .button__text {
   position: relative;
   inset: 0;
   z-index: 1;
-  color: var(--accent-color);
   color: var(--like-button_color);
   font-family: PressStart2P, sans-serif;
   font-weight: var(--font-weight-regular);
@@ -264,7 +264,6 @@
   flex-direction: row;
   align-items: center;
   gap: 8px;
-  height: 100%;
   margin: 0 auto;
   margin-block-start: clamp(3.25rem, 3.294rem + -0.1878vw, 3.125rem);
   border: 2px solid var(--accent-color);
@@ -272,15 +271,15 @@
 }
 
 .dialog-button__icon {
-  width: 21px;
-  height: 21px;
+  inline-size: 21px;
+  block-size: 21px;
   margin: 15px 0 15px 19px;
   color: var(--accent-color);
   fill: currentColor;
 }
 
 .dialog-button__text {
-  padding-right: 21px;
+  padding-inline-end: 21px;
   font-family: PressStart2P, sans-serif;
   font-weight: var(--font-weight-regular);
   font-size: 14px;
@@ -293,23 +292,23 @@
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content min-content;
-  margin: auto;
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
-  background-color: var(--bg-color);
   row-gap: 30px;
   column-gap: 20px;
+  margin: auto;
+  border: 2px solid var(--accent-color);
   /*28px - desktop*/
   /*28px 40px - mobile*/
   padding: 28px;
+  color: var(--accent-color);
   fill: currentColor;
+  background-color: var(--bg-color);
   min-inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
 }
 
 .dialog__icon {
-  width: 39px;
-  height: 39px;
   align-self: center;
+  inline-size: 39px;
+  block-size: 39px;
 }
 
 .dialog__text {
@@ -321,12 +320,12 @@
 
 .dialog__close-button {
   grid-column: span 2;
+  border: 2px solid var(--accent-color);
+  padding: 12.5px 0;
   font-family: PressStart2P;
   font-weight: var(--font-weight-regular);
   font-size: 14px;
   line-height: 0.9;
-  border: 2px solid var(--accent-color);
-  padding: 12.5px 0;
 }
 
 .dialog::backdrop {
@@ -340,10 +339,10 @@
   }
 
   .dialog-button__icon {
-    margin-block-end: 0;
+    inline-size: 28px;
+    block-size: 28px;
     margin-inline-start: 0;
-    width: 28px;
-    height: 28px;
+    margin-block-end: 0;
   }
 
   .dialog-button__text {
