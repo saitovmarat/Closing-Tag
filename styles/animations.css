@@ -23,7 +23,7 @@
 .like-icon.is-liked {  
   .heart {
     transform-origin: center;
-    animation: zoomOut 0.3s ease-in-out 0.1s forwards; 
+    animation: zoomOut 0.3s ease-in 0.1s forwards; 
   }
 
   .core {
@@ -41,10 +41,6 @@
     transition: fill 0.3s linear 0.06s;
   }
   
-  .like-icon {
-    transition: transform 0.5s linear 0.15s;
-    transform: scale(1.2);
-  }
   .sparks {
     animation: sparksVisibility 0.3s ease-in 0.3s forwards;
   }
@@ -52,6 +48,7 @@
 
 .contour {
   fill: var(--accent-color);
+  transition: fill 0.1s linear;
 }
 
 .main-body {
@@ -67,7 +64,6 @@
 .sparks {
   opacity: 0;
   fill: var(--heart-color);
-  transition: opacity 0.3s linear 0.2s;
 }
 
 @keyframes move {
